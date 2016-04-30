@@ -1,3 +1,7 @@
+== 3.2.0 2016-04-30
+
+ * Support for MRI 2.3.0.
+
 == 3.1.0 2015-02-06
 
  * Fix performance issue caused by fix for pry. You'll need to use
