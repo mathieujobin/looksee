@@ -9,9 +9,8 @@ rvm:
   - 2.3.1
   - jruby-9.0.5.0
   - jruby-9.1.2.0
+  - ruby-head
 matrix:
   allow_failures:
-    # rbx no longer builds on travis
-    - rvm: rbx-2.4.1
-    - rvm: rbx-2.5.8
+    - rvm: ruby-head
   fast_finish: true
