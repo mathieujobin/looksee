@@ -13,4 +13,5 @@ matrix:
   allow_failures:
     # currently broken in upstream master
     - rvm: rbx-2.4.1
+    - rvm: ruby-head
   fast_finish: true
