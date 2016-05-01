@@ -7,3 +7,8 @@ rvm:
   - 2.2.0
   - jruby-1.7.9
   - rbx-2.4.1
+matrix:
+  allow_failures:
+    # currently broken in upstream master
+    - rvm: rbx-2.4.1
+  fast_finish: true
