@@ -101,7 +101,7 @@ static VALUE internal_instance_methods(VALUE klass, VISIBILITY_TYPE visibility) 
   arg.visibility = visibility;
 
 #if RUBY_VERSION >= 230
-  Looksee_method_table_foreach(RCLASS_M_TBL(klass)->st, add_method_if_matching, (st_data_t)&arg);
+  Looksee_method_table_foreach(RCLASS_M_TBL(klass)->st, add_method_if_matching, (st_data_t*)&arg);
 #else
   Looksee_method_table_foreach(RCLASS_M_TBL(klass), add_method_if_matching, &arg);
 #endif
@@ -139,7 +139,7 @@ VALUE Looksee_internal_private_instance_methods(VALUE self, VALUE klass) {
 VALUE Looksee_internal_undefined_instance_methods(VALUE self, VALUE klass) {
   VALUE names = rb_ary_new();
 #if RUBY_VERSION >= 230
-  Looksee_method_table_foreach(RCLASS_M_TBL(klass)->st, add_method_if_undefined, (st_data_t)&names);
+  Looksee_method_table_foreach(RCLASS_M_TBL(klass)->st, add_method_if_undefined, (st_data_t*)&names);
 #else
   Looksee_method_table_foreach(RCLASS_M_TBL(klass), add_method_if_undefined, &names);
 #endif
