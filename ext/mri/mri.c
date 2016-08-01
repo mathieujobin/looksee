@@ -2,6 +2,7 @@
 
 #if RUBY_VERSION >= 200
 #  if RUBY_VERSION >= 230
+#    include "vm_core.h"
 #    include "id_table.h"
 #  endif
 #  include "method.h"
