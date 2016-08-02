@@ -3,7 +3,7 @@
 #if RUBY_VERSION >= 200
 #  if RUBY_VERSION >= 230
 #    include "id_table.h"
-#    define Looksee_method_table_foreach rb_id_table_foreach
+//    define Looksee_method_table_foreach rb_id_table_foreach
 #  endif
 #  include "method.h"
 #  include "internal.h"
@@ -102,9 +102,9 @@ static VALUE internal_instance_methods(VALUE klass, VISIBILITY_TYPE visibility) 
   arg.visibility = visibility;
 
 #if RUBY_VERSION >= 230
-//   rb_id_table tbl = RCLASS_M_TBL(klass);
-//   st_table x = tbl.st;
-  Looksee_method_table_foreach(RCLASS_M_TBL(klass), add_method_if_matching, &arg);
+   struct rb_id_table tbl = RCLASS_M_TBL(klass);
+   st_table x = tbl.st;
+  Looksee_method_table_foreach(x, add_method_if_matching, &arg);
 #else
   Looksee_method_table_foreach(RCLASS_M_TBL(klass), add_method_if_matching, &arg);
 #endif
