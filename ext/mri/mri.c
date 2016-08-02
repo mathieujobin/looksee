@@ -2,7 +2,7 @@
 
 #if RUBY_VERSION >= 200
 #  if RUBY_VERSION >= 230
-#    include "id_table.h"
+#    include "id_table.c"
 //    define Looksee_method_table_foreach st_id_table_foreach
 //rb_id_table_foreach
 #  endif
