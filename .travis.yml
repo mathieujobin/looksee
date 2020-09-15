@@ -3,8 +3,8 @@ before_install:
   - gem install bundler -v '1.17.3'
 bundler_args: --without dev
 rvm:
-  - 2.1.9
-  - 2.2.9
+  - 2.1.10
+  - 2.2.10
   - 2.3.8
   - 2.4.10
   - 2.5.8
@@ -13,10 +13,12 @@ rvm:
   - ruby-head
   - jruby-9.1
   - jruby-9.2
+  - jruby-9.3
   - rbx-2.4
   - rbx-2.5
   - rbx-3
   - rbx-4
+  - truffleruby
 
 matrix:
   allow_failures:
